@@ -19,6 +19,10 @@ public class LoginIF {
 				System.out.println("Enter password: ");
 				String password = scan.nextLine();
 
+				// Sending login info to controller
+				Controller controller = new Controller();
+				controller.verifyUserCredentials(username, password);
+
 			} else if (choice == 2) {
 				System.out.println("Continuing as a guest...");
 			} else {
@@ -29,8 +33,6 @@ public class LoginIF {
 			// If input is not an integer
 			System.out.println("Quitting application. Goodbye!");
 			System.exit(0);
-		} finally {
-			scan.close();
 		}
 	}
 }
