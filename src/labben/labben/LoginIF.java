@@ -25,6 +25,18 @@ public class LoginIF {
 
 			} else if (choice == 2) {
 				System.out.println("Continuing as a guest...");
+				
+				
+				Posts.initializePosts();
+				Posts.viewAllPosts();
+				System.out.println("Press something else to quit");
+				String quit = scan.nextLine();
+				if (!quit.equals("")) {
+					System.out.println("Quitting application. Goodbye!");
+					System.exit(0);
+					}
+					
+				
 			} else {
 				System.out.println("Quitting application. Goodbye!");
 				System.exit(0);
