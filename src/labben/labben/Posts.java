@@ -12,7 +12,7 @@ public class Posts {
 		postList.add(new Post("akim", "Hello bro", 2));
 		postList.add(new Post("jnash", "How do you like your cheese?", 3));
 		postList.add(new Post("akim", "Drippy bruh", 4));
-		postList.add(new Post("jnash", "Nice pookie!", 5));
+		postList.add(new Post("jnash", "Nice pookie bear ❤", 5));
 
 	}
 
