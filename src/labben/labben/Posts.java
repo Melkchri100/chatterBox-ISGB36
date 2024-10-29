@@ -10,7 +10,7 @@ public class Posts {
 
 	public static void initializePosts() {
 		Scanner input = null;
-		String file = "posts.csv";
+		String file = "labben/labben/posts.csv";
 		
 		//postList.add(new Post("jnash", "Hello World!", 1));
 		//postList.add(new Post("akim", "Hello bro", 2));
@@ -23,7 +23,7 @@ public class Posts {
 
 			while (input.hasNextLine()) {
 				String line = input.nextLine();
-				String[] toks = line.split("\t");
+				String[] toks = line.split(",");
 
 				// Ensure that the line has the expected number of fields
 				if (toks.length >= 3) {
