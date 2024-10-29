@@ -14,6 +14,8 @@ public class Controller {
 		}
 	    else {
 		System.out.println("Incorrect login");
+		LoginIF loginIF = new LoginIF();
+		loginIF.enterCredentials();
 		}
 	}
 	public void verifyPost() {
