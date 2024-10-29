@@ -10,4 +10,7 @@ public class Post {
 		this.message = message;
 		this.postID = postID;
 	}
+	public static void  createPost(String username, String message, int postID) {
+		Posts.postList.add(new Post(username, message, postID));
+	}
 }

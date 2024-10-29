@@ -25,8 +25,9 @@ public class User {
 				Posts.viewOwnPost(username);
 				User.userChoices(username, password);
 			} else if (choice == 3) {
-				// CreatePostIF.enterMessage();
+				CreatePostIF.enterMessage(username);
 				User.userChoices(username, password);
+				
 			} else {
 				System.out.println("Quitting application. Goodbye!");
 				System.exit(0);
