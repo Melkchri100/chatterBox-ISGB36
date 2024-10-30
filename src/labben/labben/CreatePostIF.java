@@ -8,9 +8,7 @@ public class CreatePostIF {
 		Scanner scanner = new Scanner(System.in);
 		String userInput = scanner.nextLine();
 		int postListLength = Posts.postList.size();
-		Post.createPost(username, userInput, postListLength+1);
+		Post.createPost(username, userInput, postListLength + 1);
 	}
-	public void saveDraft() {
-		
-	}
+
 }

@@ -13,7 +13,7 @@ public class User {
 
 	public static void userChoices(String username, String password) {
 		System.out.println("Welcome user\nPress 1 to view all messages\nPress 2 to view your messages\n"
-				+ "Press 3 to create Post\nPress anything else to quit");
+				+ "Press 3 to create Post\nPress 4 to delete a post\nPress anything else to quit");
 		Scanner scan = new Scanner(System.in);
 		try {
 			int choice = scan.nextInt();
@@ -27,15 +27,21 @@ public class User {
 			} else if (choice == 3) {
 				CreatePostIF.enterMessage(username);
 				User.userChoices(username, password);
-				
+
+			} else if (choice == 4) {
+				Posts.viewOwnPost(username);
+				Post.deletePost(username);
+				User.userChoices(username, password);
 			} else {
 				System.out.println("Quitting application. Goodbye!");
+				Posts.savePost();
 				System.exit(0);
 			}
 
 		} catch (Exception e) {
 			// If input is not an integer
 			System.out.println("Quitting application. Goodbye!");
+			Posts.savePost();
 			System.exit(0);
 		}
 

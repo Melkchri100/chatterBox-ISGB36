@@ -11,22 +11,11 @@ public class Controller {
 			System.out.println("Correct login");
 			Posts.initializePosts();
 			User.userChoices(username, password);
+		} else {
+			System.out.println("Incorrect login");
+			LoginIF loginIF = new LoginIF();
+			loginIF.enterCredentials();
 		}
-	    else {
-		System.out.println("Incorrect login");
-		LoginIF loginIF = new LoginIF();
-		loginIF.enterCredentials();
-		}
-	}
-	public void verifyPost() {
-
 	}
 
-	public void getAllPosts() {
-
-	}
-
-	public void getOwnPosts() {
-
-	}
 }

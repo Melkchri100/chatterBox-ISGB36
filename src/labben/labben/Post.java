@@ -1,5 +1,7 @@
 package labben;
+
 import java.io.*;
+import java.util.Scanner;
 
 public class Post {
 	String username;
@@ -11,22 +13,27 @@ public class Post {
 		this.message = message;
 		this.postID = postID;
 	}
-	public static void  createPost(String username, String message, int postID) {
-		PrintWriter writer = null;
-		
+
+	public static void createPost(String username, String message, int postID) {
+
 		Posts.postList.add(new Post(username, message, postID));
-		
-		try {
-			writer = new PrintWriter(new FileWriter("labben/labben/posts.csv", true));
-			writer.println(username + ", " + message + ", " + postID);
-			System.out.println("File written!");
-			writer.close();
-		} catch (FileNotFoundException e) {
-			System.out.println("File not found: " + "labben/labben/posts.csv");
-		} catch(IOException e){
-			e.printStackTrace();
-		
-		
+
 	}
+
+	public static void deletePost(String yourUsername) {
+		System.out.println("Choose which post to delete: ");
+		Scanner scan = new Scanner(System.in);
+		int postID = scan.nextInt();
+		scan.nextLine();
+		if (Posts.postList.get(postID - 1).username.equals(yourUsername)) {
+			Posts.postList.remove(postID - 1);
+		} else {
+			System.out.println("You can't delete other users posts");
+		}
+
+		for (int i = 0; i < Posts.postList.size(); i++) {
+
+			Posts.postList.get(i).postID = i + 1;
+		}
 	}
-	}
+}

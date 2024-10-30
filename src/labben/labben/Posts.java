@@ -10,13 +10,7 @@ public class Posts {
 
 	public static void initializePosts() {
 		Scanner input = null;
-		String file = "labben/labben/posts.csv";
-		
-		//postList.add(new Post("jnash", "Hello World!", 1));
-		//postList.add(new Post("akim", "Hello bro", 2));
-		//postList.add(new Post("jnash", "How do you like your cheese?", 3));
-		//postList.add(new Post("akim", "Drippy bruh", 4));
-		//postList.add(new Post("jnash", "Nice pookie bear ❤", 5));
+		String file = "labben/posts.csv";
 
 		try {
 			input = new Scanner(new File(file));
@@ -43,12 +37,25 @@ public class Posts {
 		}
 	}
 
-	public void linkUser() {
+	public static void savePost() {
 
-	}
+		PrintWriter writer = null;
 
-	public void savePost() {
+		try {
+			writer = new PrintWriter(new FileWriter("labben/labben/posts.csv"));
 
+			for (Post post : postList) {
+				writer.println(post.username + ", " + post.message + ", " + post.postID);
+			}
+
+			System.out.println("File written!");
+			writer.close();
+		} catch (FileNotFoundException e) {
+			System.out.println("File not found: " + "labben/labben/posts.csv");
+		} catch (IOException e) {
+			e.printStackTrace();
+
+		}
 	}
 
 	public static void viewAllPosts() {
