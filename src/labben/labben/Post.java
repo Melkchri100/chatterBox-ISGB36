@@ -17,6 +17,7 @@ public class Post {
 	public static void createPost(String username, String message, int postID) {
 
 		Posts.postList.add(new Post(username, message, postID));
+		System.out.println("Post created with message: "+ message);
 
 	}
 
