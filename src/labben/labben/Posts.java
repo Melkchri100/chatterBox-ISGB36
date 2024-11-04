@@ -42,7 +42,7 @@ public class Posts {
 		PrintWriter writer = null;
 
 		try {
-			writer = new PrintWriter(new FileWriter("labben/labben/posts.csv"));
+			writer = new PrintWriter(new FileWriter("labben/posts.csv"));
 
 			for (Post post : postList) {
 				writer.println(post.username + ", " + post.message + ", " + post.postID);
